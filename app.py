@@ -14,4 +14,5 @@ if environ.get('APP_CONFIG', 'local') == 'local':
 else:
     app.config.from_pyfile('config/production.py')
 
-app.run(debug=app.config.get('DEBUG', False))
+if __name__ == '__main__':
+    app.run(debug=app.config.get('DEBUG', False))
