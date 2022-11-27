@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run BACK",
+            "type": "shell",
+            "command": "pipenv run python3 app.py",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "develop",
+            },
+        },
+        {
+            "label": "Run TEST",
+            "type": "shell",
+            "command": "pipenv run pytest",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "develop",
+            },
+        }
+    ]
+}
