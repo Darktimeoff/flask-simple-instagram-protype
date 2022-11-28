@@ -6,7 +6,7 @@ class CommentsDao(Dao):
         return Comment(
             pk=data['pk'],
             post_id=data['post_id'],
-            commenter_name=data['comment_name'],
+            commenter_name=data['commenter_name'],
             comment=data['comment'],
         )
 
@@ -17,6 +17,9 @@ class CommentsDao(Dao):
 
     def get_comments_by_post_id(self, post_id: int):
         #ToDo Implemented for post exist and throw error
+        if type(post_id) is not int:
+            raise TypeError("post_id must be an integer")
+
         comments = self.get_all()
         
         return [c for c in comments if c.post_id == post_id]
