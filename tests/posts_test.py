@@ -37,3 +37,13 @@ class TestPosts:
         response = test_client.get("/search/")
 
         assert response.status_code == 200, 'Unexpected status code'
+
+    def test_user_feed(self, test_client):
+        response = test_client.get("/users/leo/")
+
+        assert response.status_code == 200, 'Unexpected status code'
+
+    def test_user_feed_unexist(self, test_client):
+        response = test_client.get("/users/asdasdasdasd/")
+
+        assert response.status_code == 200, 'Unexpected status code'

@@ -33,3 +33,9 @@ def search():
         posts = posts_dao.search_by_word(word)
 
     return render_template('search.html', search=word, posts=posts)
+
+@posts_blueprint.route('/users/<username>/')
+def user(username: str):
+    posts = posts_dao.get_by_user(username)
+
+    return render_template('user-feed.html', username=username, posts=posts)
