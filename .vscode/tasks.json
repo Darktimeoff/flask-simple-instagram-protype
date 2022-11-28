@@ -4,7 +4,7 @@
         {
             "label": "Run BACK",
             "type": "shell",
-            "command": "pipenv run python3 app.py",
+            "command": "pipenv run python3 run.py",
             "presentation": {
                 "reveal": "always",
                 "panel": "new",

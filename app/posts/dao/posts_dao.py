@@ -1,5 +1,5 @@
 from classes.dao import Dao
-from posts.model import Post
+from app.posts.model import Post
 
 
 class PostsDao(Dao):

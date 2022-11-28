@@ -1,12 +1,12 @@
 import pytest
-from posts.dao.posts_dao import PostsDao
-from posts.model import Post
+from app.posts.dao.posts_dao import PostsDao
+from app.posts.model import Post
 from utils.main import get_post_path
 
 
 @pytest.fixture(scope='module')
 def posts_dao():
-    return PostsDao('.' + get_post_path())
+    return PostsDao(get_post_path())
 
 
 class TestPostsDao:

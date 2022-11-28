@@ -1,12 +1,12 @@
 import pytest
 
-from comments.dao.commnets_dao import CommentsDao
-from comments.model import Comment
+from app.comments.dao.commnets_dao import CommentsDao
+from app.comments.model import Comment
 from utils.main import get_comment_path
 
 @pytest.fixture(scope='module')
 def comments_dao():
-    return CommentsDao('.' + get_comment_path())
+    return CommentsDao(get_comment_path())
 
 
 class TestCommentsDao:

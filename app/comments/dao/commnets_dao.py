@@ -1,5 +1,5 @@
 from classes.dao import Dao
-from comments.model import Comment
+from app.comments.model import Comment
 
 class CommentsDao(Dao):
     def searialize(self, data: dict):
