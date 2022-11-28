@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 from dotenv import load_dotenv
 from logging import basicConfig
@@ -12,6 +12,11 @@ basicConfig(filename='basic.log')
 app = Flask(__name__)
 
 app.register_blueprint(posts_blueprint)
+
+def error_404(e):
+    return render_template('404.html')
+
+app.register_error_handler(404, error_404)
 
 if environ.get('APP_CONFIG', 'local') == 'local':
     app.config.from_pyfile('config/development.py')
