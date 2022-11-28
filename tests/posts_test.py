@@ -22,3 +22,18 @@ class TestPosts:
         response = test_client.get("/posts/asda/")
 
         assert response.status_code == 404, 'Unexpected status code'
+    
+    def test_page_search(self, test_client: FlaskClient):
+        response = test_client.get("/search/?s=Утром")
+
+        assert response.status_code == 200, 'Unexpected status code'
+    
+    def test_page_search_empty_result(self, test_client: FlaskClient):
+        response = test_client.get("/search/?s=123123123123")
+
+        assert response.status_code == 200, 'Unexpected status code'
+    
+    def test_page_search_empty_search(self, test_client: FlaskClient):
+        response = test_client.get("/search/")
+
+        assert response.status_code == 200, 'Unexpected status code'

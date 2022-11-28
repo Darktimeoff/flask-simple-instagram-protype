@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 import logging
 
 from app.comments.dao.commnets_dao import CommentsDao
@@ -23,3 +23,13 @@ def post(id: int):
     comments = comments_dao.get_comments_by_post_id(id)
 
     return render_template('post.html', post=post, comments=comments)
+
+@posts_blueprint.route('/search/')
+def search():
+    word = request.args.get('s')
+    posts = []
+
+    if word:
+        posts = posts_dao.search_by_word(word)
+
+    return render_template('search.html', search=word, posts=posts)
