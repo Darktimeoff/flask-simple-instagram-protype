@@ -11,7 +11,7 @@ class PostsDao(Dao):
             pic=data['pic'],
             content=data['content'],
             views_count=data['views_count'],
-            likes_count=data['likes_count']
+            likes_count=data['likes_count'],
         )
 
     def get_all(self):

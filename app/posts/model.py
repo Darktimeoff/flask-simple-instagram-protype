@@ -10,7 +10,7 @@ class Post:
 
     def __init__(self, 
         pk: int, poster_name: str, poster_avatar: str, pic: str, 
-        content: str, views_count: int, likes_count: int):
+        content: str, views_count: int, likes_count: int) -> None:
         self.pk = pk
         self.poster_name = poster_name
         self.poster_avatar = poster_avatar
