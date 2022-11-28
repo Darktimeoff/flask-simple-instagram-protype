@@ -18,4 +18,7 @@ class Post:
         self.content = content
         self.views_count = views_count
         self.likes_count = likes_count
+
+    def get_keys(self):
+        return {"pk", "poster_name", "poster_avatar", "pic", "content", "views_count", "likes_count"}
     

@@ -5,6 +5,7 @@ from logging import basicConfig
 from os import environ
 
 from app.posts.views import posts_blueprint
+from app.api.views import api_blueprint
 
 load_dotenv(override=True)
 basicConfig(filename='basic.log')
@@ -12,6 +13,7 @@ basicConfig(filename='basic.log')
 app = Flask(__name__)
 
 app.register_blueprint(posts_blueprint)
+app.register_blueprint(api_blueprint)
 
 def error_404(e):
     return render_template('404.html')

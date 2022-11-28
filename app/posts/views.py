@@ -10,6 +10,10 @@ posts_blueprint = Blueprint('posts', __name__, template_folder='templates')
 posts_dao = PostsDao(get_post_path())
 comments_dao = CommentsDao(get_comment_path())
 
+@posts_blueprint.errorhandler(404)
+def error_404(e):
+    return render_template('404.html')
+
 @posts_blueprint.route('/')
 def page_index():
     posts = posts_dao.get_all()
