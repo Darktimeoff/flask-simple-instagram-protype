@@ -14,7 +14,7 @@
         {
             "label": "Run TEST",
             "type": "shell",
-            "command": "pipenv run pytest",
+            "command": "pipenv run python3 -m pytest",
             "presentation": {
                 "reveal": "always",
                 "panel": "new",
